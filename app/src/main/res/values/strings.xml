@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">优趣</string>
+    <string name="banner_index">首页</string>
+    <string name="banner_classify">社区</string>
+    <string name="banner_shopping">购物车</string>
+    <string name="banner_my">我的</string>
+    <string name="lijitiyan">立即体验</string>
+    <string name="index_banner1">套套天堂</string>
+    <string name="index_banner2">情趣服饰</string>
+    <string name="index_banner3">男用玩具</string>
+    <string name="index_banner4">女用玩具</string>
+    <string name="index_banner5">男女喷剂</string>
+    <string name="index_banner6">润滑助兴</string>
+    <string name="index_banner7">调教玩具</string>
+    <string name="index_banner8">免费试用</string>
+    <string name="index_banner9">撸一撸</string>
+    <string name="index_banner10">分类</string>
+    <string name="xianshi_tv">限时抢购</string>
+    <string name="xianshiqiang_changci">13:00场</string>
+    <string name="xsq_jishi_tv">00:13:12</string>
+    <string name="xsq_quanbu_tv"><![CDATA[查看全部>]]></string>
+    <string name="xsq_jiage_new">￥13.13</string>
+    <string name="xsq_jiage_old">￥33.13</string>
+    <string name="taotaotiantang_tit">套套天堂</string>
+    <string name="taotaotiantang_name">/taotaotiantang</string>
+    <string name="tttt_more"><![CDATA[更多>]]></string>
+    <string name="tttt_item_txt">我就是产品</string>
+    <string name="qqfs_tit">情趣服饰</string>
+    <string name="qqfs_name">/qingqufushi</string>
+</resources>
