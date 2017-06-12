@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:scrollbars="horizontal"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_centerVertical="true"
+                android:text="@string/classify_quanzi_title"
+                android:textColor="@color/hei"
+                android:textSize="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/classify_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@color/hui"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/quan_wen_img"
+                android:src="@mipmap/buffer"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+            <TextView
+                android:id="@+id/quan_wen_name"
+                android:layout_toRightOf="@id/quan_wen_img"
+                android:layout_marginLeft="15dp"
+                android:text="@string/my_name"
+                android:textColor="@color/hei"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/quan_wen_img" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/quan_wen_name" />
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="13dp"
+                android:textColor="@color/biaoti"
+                android:text="@string/quan_wen_num"
+                android:layout_alignTop="@id/quan_wen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@color/hui"
+            android:layout_marginStart="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/quan_wen_img1"
+                android:src="@mipmap/buffer"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+            <TextView
+                android:id="@+id/quan_wen_name1"
+                android:layout_toRightOf="@id/quan_wen_img1"
+                android:layout_marginLeft="15dp"
+                android:text="@string/my_name"
+                android:textColor="@color/hei"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/quan_wen_img1" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/quan_wen_name1" />
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="13dp"
+                android:textColor="@color/biaoti"
+                android:text="@string/quan_wen_num"
+                android:layout_alignTop="@id/quan_wen_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@color/hui"
+            android:layout_marginStart="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <ImageView
+                android:id="@+id/quan_wen_img2"
+                android:src="@mipmap/buffer"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+            <TextView
+                android:id="@+id/quan_wen_name2"
+                android:layout_toRightOf="@id/quan_wen_img2"
+                android:layout_marginLeft="15dp"
+                android:text="@string/my_name"
+                android:textColor="@color/hei"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/quan_wen_img2" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignStart="@+id/quan_wen_name2" />
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="13dp"
+                android:textColor="@color/biaoti"
+                android:text="@string/quan_wen_num"
+                android:layout_alignTop="@id/quan_wen_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@color/hui"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_centerVertical="true"
+                android:text="@string/classify_quanzi_title1"
+                android:textColor="@color/hei"
+                android:textSize="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/classify_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="13dp"
+            android:background="@color/hei"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:id="@+id/quanzi_tuijian_name"
+                android:text="@string/my_name"
+                android:textSize="25sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:textColor="@color/white"
+                android:layout_below="@id/quanzi_tuijian_name"
+                android:layout_alignStart="@id/quanzi_tuijian_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/quanzi_tuijian_renshu"
+                android:layout_alignParentBottom="true"
+                android:text="@string/quanzi_renshu"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="@string/quan_tuijian_guanzhu"
+                android:textSize="18sp"
+                android:textColor="@color/biaoti"
+                android:background="@drawable/quanzi_tuijian_btn"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="13dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="70dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="13dp"
+            android:background="@color/hei"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:id="@+id/quanzi_tuijian_name1"
+                android:text="@string/my_name"
+                android:textSize="25sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:textColor="@color/white"
+                android:layout_below="@id/quanzi_tuijian_name1"
+                android:layout_alignStart="@id/quanzi_tuijian_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/quanzi_tuijian_renshu1"
+                android:layout_alignParentBottom="true"
+                android:text="@string/quanzi_renshu"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="@string/quan_tuijian_guanzhu"
+                android:textSize="18sp"
+                android:textColor="@color/biaoti"
+                android:background="@drawable/quanzi_tuijian_btn"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="13dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="70dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="13dp"
+            android:background="@color/hei"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:id="@+id/quanzi_tuijian_name2"
+                android:text="@string/my_name"
+                android:textSize="25sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/quan_wen_content"
+                android:textColor="@color/white"
+                android:layout_below="@id/quanzi_tuijian_name2"
+                android:layout_alignStart="@id/quanzi_tuijian_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/quanzi_tuijian_renshu2"
+                android:layout_alignParentBottom="true"
+                android:text="@string/quanzi_renshu"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="@string/quan_tuijian_guanzhu"
+                android:textSize="18sp"
+                android:textColor="@color/biaoti"
+                android:background="@drawable/quanzi_tuijian_btn"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="13dp"
+                android:layout_marginBottom="15dp"
+                android:layout_width="70dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

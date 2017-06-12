@@ -1,5 +1,6 @@
 package com.jinfukeji.taqu.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,10 +19,13 @@ import com.jinfukeji.taqu.R;
 import com.jinfukeji.taqu.activity.hot.SuibianGaiAdapter;
 import com.jinfukeji.taqu.activity.qingqufushi.QingquFushiAdapter;
 import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTTAdapter;
+import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTianTangActivity;
+import com.jinfukeji.taqu.activity.tuijian.TuijianAdapter;
 import com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView;
 import com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListViewAdapter;
 import com.jinfukeji.taqu.adapter.GuideAdapter;
 import com.jinfukeji.taqu.utils.GuideUtil;
+import com.jinfukeji.taqu.utils.ScrollViewUtil;
 
 /**
  * Created by "于志渊"
@@ -35,12 +40,45 @@ public class IndexFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_index,container,false);
+        biaoTi();//滑动显示标题
         initBanner();//轮播图
         flashSale();//限时抢购
         suiYiGai();//中间随便改
         taoTTT();//套套天堂
         qingQuFushi();//情趣服饰
+        tuiJian();//良心推荐
+        onClick();//点击事件
         return view;
+    }
+
+    //各种点击事件
+    private void onClick() {
+        view.findViewById(R.id.index_banner1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), TaoTaoTianTangActivity.class));
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (resultCode){
+            default:
+                break;
+        }
+    }
+
+    //良心推荐
+    GridView tuijianGridView;
+    TuijianAdapter tuijianAdapter;
+    private void tuiJian() {
+        tuijianGridView= (GridView) view.findViewById(R.id.tuijian_gv);
+        String[] titles={"小二坏坏", "好人"};
+        final int[] ids = {R.mipmap.buffer3,R.mipmap.buffer4};
+        tuijianAdapter=new TuijianAdapter(ids,titles,getContext());
+        tuijianGridView.setAdapter(tuijianAdapter);
     }
 
     //情趣服饰控件
@@ -146,6 +184,7 @@ public class IndexFragment extends Fragment{
             handler.sendEmptyMessageDelayed(0,2000);
         }
     };
+    private ImageView index_sousuo_img,index_xinxi_img;
     //轮播图
     public void initBanner() {
         imgsId=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
@@ -159,5 +198,23 @@ public class IndexFragment extends Fragment{
         handler.sendEmptyMessageDelayed(0,2000);
         GuideUtil.setOnTouchListener(lunbotu_guide_vp,handler);
         GuideUtil.setOnPageChangeListener(lunbotu_guide_vp,imgsId,lunbotu_dots_ll);
+    }
+
+    //滑动显示标题控件
+    private ImageView biaoti_xiaoxi_img,biaoti_sousuo_img;
+    private ScrollViewUtil myScrollView;
+    private View layout;
+    //滑动显示标题
+    private void biaoTi(){
+        biaotiView();//标题里面的控件初始化
+        layout.setAlpha(0);
+        myScrollView.setFadingView(layout);
+        myScrollView.setFadingHeightView(view.findViewById(R.id.lunbotu_vp));
+    }
+
+    //标题里面的控件初始化
+    private void biaotiView() {
+        layout=view.findViewById(R.id.nac_layout);
+        myScrollView= (ScrollViewUtil) view.findViewById(R.id.index_scrollview);
     }
 }

@@ -3,8 +3,10 @@ package com.jinfukeji.taqu.guide;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.jinfukeji.taqu.MainActivity;
 import com.jinfukeji.taqu.R;
+import com.jinfukeji.taqu.utils.ChenJinShiUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +39,12 @@ public class GuideActivity extends AppCompatActivity {
     private ViewGroup lldots;
     //进入按钮
     private Button guide_btn;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+        ChenJinShiUtil.chenJin(GuideActivity.this);
         initView();//控件初始化
         initOper();//监听事件
         addView();//添加图片
