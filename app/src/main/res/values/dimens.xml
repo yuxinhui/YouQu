@@ -3,12 +3,4 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="thumnail_default_width">150dip</dimen>
-    <dimen name="thumnail_default_height">150dip</dimen>
-    <dimen name="suiyigai_width">250dp</dimen>
-    <dimen name="suiyigai_heigth">300dp</dimen>
-    <dimen name="tttt_width">150dp</dimen>
-    <dimen name="tttt_heigth">200dp</dimen>
-    <dimen name="qqfs_width">200dp</dimen>
-    <dimen name="qqfs_heigth">130dp</dimen>
 </resources>

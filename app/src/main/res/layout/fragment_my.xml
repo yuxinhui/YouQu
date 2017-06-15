@@ -17,12 +17,12 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="15dp"
                 android:layout_marginStart="20dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
             <TextView
                 android:text="@string/wode"
                 android:textColorHint="@color/hei"
-                android:textSize="25sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
@@ -92,6 +92,7 @@
             android:layout_height="50dp">
             <LinearLayout
                 android:id="@+id/my_dingdan_ll"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -99,8 +100,7 @@
                 <TextView
                     android:text="@string/my_dingdan_num"
                     android:layout_gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -111,6 +111,7 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/my_fayan_ll"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -118,8 +119,7 @@
                 <TextView
                     android:text="@string/my_dingdan_num"
                     android:layout_gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -130,6 +130,7 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/my_guanzhu_ll"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -137,8 +138,7 @@
                 <TextView
                     android:text="@string/my_dingdan_num"
                     android:layout_gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -149,6 +149,7 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/my_haoyou_ll"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -156,8 +157,7 @@
                 <TextView
                     android:text="@string/my_dingdan_num"
                     android:layout_gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -167,6 +167,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/my_fensi_ll"
                 android:orientation="vertical"
                 android:layout_weight="1"
@@ -175,8 +176,7 @@
                 <TextView
                     android:text="@string/my_dingdan_num"
                     android:layout_gravity="center_horizontal"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -194,166 +194,167 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_qudou_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/my_qudou_img"
+                    android:layout_centerVertical="true"
                     android:src="@mipmap/my_qudou"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_qudou_txt"
                     android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/my_qudou_img"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_qubi_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_qubi_img"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
                     android:src="@mipmap/my_qubi"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_qubi_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/my_qubi_img"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_youhui_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_youhui_img"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
                     android:src="@mipmap/my_youhui"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_youhui_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_youhui_img"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_jiangli_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_jiangli_img"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
                     android:src="@mipmap/my_jiangli"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_jiangli_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/my_jiangli_img"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_jinbi_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/my_jinbi_img"
+                    android:layout_centerVertical="true"
                     android:src="@mipmap/my_jinbi"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_jinbi_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/my_jinbi_img"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
         </LinearLayout>
         <RelativeLayout
             android:background="@color/hui"
@@ -363,100 +364,100 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_daka_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_daka_img"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
                     android:src="@mipmap/my_daka"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_daka_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/my_daka_img"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_yinsi_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_yinsi_img"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerVertical="true"
                     android:src="@mipmap/my_yinsi"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_yinsi_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/my_yinsi_img"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
             <RelativeLayout
                 android:background="@color/hui"
                 android:layout_marginLeft="60dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/my_kefu_ll"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
                 <ImageView
-                    android:layout_gravity="center_vertical"
+                    android:id="@+id/my_kefu_img"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
                     android:src="@mipmap/my_kefu"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
                 <TextView
                     android:text="@string/my_kefu_txt"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@id/my_kefu_img"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:text="@string/my_qudou_num"
-                    android:gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_weight="0.2"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

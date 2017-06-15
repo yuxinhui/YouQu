@@ -34,6 +34,7 @@ public class ChenJinShiUtil {
             activity.getWindow().setNavigationBarColor(Color.TRANSPARENT);
         }
         ActionBar actionBar=activity.getSupportActionBar();
+        assert actionBar != null;
         actionBar.hide();
     }
 }

@@ -7,10 +7,12 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,11 +23,16 @@ import com.jinfukeji.taqu.activity.qingqufushi.QingquFushiAdapter;
 import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTTAdapter;
 import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTianTangActivity;
 import com.jinfukeji.taqu.activity.tuijian.TuijianAdapter;
-import com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView;
-import com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListViewAdapter;
+import com.jinfukeji.taqu.activity.xianshiqiang.XianshiQiangAdapter;
 import com.jinfukeji.taqu.adapter.GuideAdapter;
+import com.jinfukeji.taqu.utils.GridSpacingItemDecoration;
 import com.jinfukeji.taqu.utils.GuideUtil;
+import com.jinfukeji.taqu.utils.LinearlayoutSpacesItemDecoration;
 import com.jinfukeji.taqu.utils.ScrollViewUtil;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by "于志渊"
@@ -65,20 +72,29 @@ public class IndexFragment extends Fragment{
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (resultCode){
+            case 11:
+                String s=data.getExtras().getString("index");
+                break;
             default:
                 break;
         }
     }
 
     //良心推荐
-    GridView tuijianGridView;
+    RecyclerView tuijian_rv;
     TuijianAdapter tuijianAdapter;
     private void tuiJian() {
-        tuijianGridView= (GridView) view.findViewById(R.id.tuijian_gv);
-        String[] titles={"小二坏坏", "好人"};
-        final int[] ids = {R.mipmap.buffer3,R.mipmap.buffer4};
-        tuijianAdapter=new TuijianAdapter(ids,titles,getContext());
-        tuijianGridView.setAdapter(tuijianAdapter);
+        tuijian_rv= (RecyclerView) view.findViewById(R.id.tuijian_rv);
+        String[] titles={"小二坏坏", "好人","才认识","你个loser"};
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer3,R.mipmap.buffer4,R.mipmap.buffer5,R.mipmap.buffer));
+        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
+        tuijian_rv.setLayoutManager(layoutManager);
+        int spanCont=2;
+        int space=15;
+        boolean includeEdge = false;
+        tuijian_rv.addItemDecoration(new GridSpacingItemDecoration(spanCont,space,includeEdge));
+        tuijianAdapter=new TuijianAdapter(getContext(),ids,titles);
+        tuijian_rv.setAdapter(tuijianAdapter);
     }
 
     //情趣服饰控件
@@ -93,7 +109,7 @@ public class IndexFragment extends Fragment{
         }
     };
 
-    GridView qqfsGridView;
+    RecyclerView qqfs_rv;
     private QingquFushiAdapter fushiAdapter;
     //情趣服饰
     private void qingQuFushi() {
@@ -108,11 +124,23 @@ public class IndexFragment extends Fragment{
         qqfsHandler.sendEmptyMessageDelayed(0,3000);
         GuideUtil.setOnTouchListener(qqfs_lunbotu_vp,qqfsHandler);
         GuideUtil.setOnPageChangeListener(qqfs_lunbotu_vp,qqfs_imgs,qqfs_lunbotu_ll);
-        qqfsGridView= (GridView) view.findViewById(R.id.qqfs_gv);
         String[] titles={"超级好人", "就是一个", "小二坏坏", "真的"};
-        final int[] ids = {R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
-        fushiAdapter=new QingquFushiAdapter(ids,titles,getContext());
-        qqfsGridView.setAdapter(fushiAdapter);
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        qqfs_rv= (RecyclerView) view.findViewById(R.id.qqfs_rv);
+        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
+        qqfs_rv.setLayoutManager(layoutManager);
+        int spanCount=2;
+        int spacing=10;
+        boolean includeEdge = false;
+        qqfs_rv.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing,includeEdge));
+        fushiAdapter=new QingquFushiAdapter(getContext(),ids,titles);
+        fushiAdapter.setOnItemClickLitener(new QingquFushiAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
+        qqfs_rv.setAdapter(fushiAdapter);
     }
 
     //套套天堂控件
@@ -127,7 +155,7 @@ public class IndexFragment extends Fragment{
         }
     };
 
-    GridView ttttGridView;
+    RecyclerView tttt_rv;
     private TaoTaoTTAdapter taoTTAdapter;
     //套套天堂
     private void taoTTT() {
@@ -142,35 +170,69 @@ public class IndexFragment extends Fragment{
         ttttHandler.sendEmptyMessageDelayed(0,3000);
         GuideUtil.setOnTouchListener(tttt_lunbotu_vp,ttttHandler);
         GuideUtil.setOnPageChangeListener(tttt_lunbotu_vp,tttt_imgs,tttt_lunbotu_ll);
-        ttttGridView= (GridView) view.findViewById(R.id.tttt_gv);
-        String[] titles={"小二坏坏", "就是一个", "超级好人", "真的"};
-        final int[] ids = {R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
-        taoTTAdapter=new TaoTaoTTAdapter(ids,titles,getContext());
-        ttttGridView.setAdapter(taoTTAdapter);
+
+        String[] titles={"小二坏坏", "就是一个", "超级好人", "真的","梦雷", "就是一个", "傻逼", "真的"};
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4,
+                R.mipmap.buffer5,R.mipmap.buffer6,R.mipmap.buffer7,R.mipmap.buffer8));
+        tttt_rv= (RecyclerView) view.findViewById(R.id.tttt_rv);
+        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),4,GridLayoutManager.VERTICAL,false);
+        tttt_rv.setLayoutManager(layoutManager);
+        int spanCount=4;
+        int spacing=10;
+        boolean includeEdge = false;
+        tttt_rv.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing,includeEdge));
+        taoTTAdapter=new TaoTaoTTAdapter(getContext(),ids,titles);
+        taoTTAdapter.OnItemClickLitener(new TaoTaoTTAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
+        tttt_rv.setAdapter(taoTTAdapter);
     }
 
     //中间随便改控件
     SuibianGaiAdapter gaiAdapter;
-    HorizontalListView gListView;
+    RecyclerView sbg_rv;
     //中间随便改
     private void suiYiGai() {
-        gListView= (HorizontalListView) view.findViewById(R.id.suiyigai_hlistview);
         String[] titles={"梦雷", "就是一个", "傻逼", "真的"};
-        final int[] ids = {R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
-        gaiAdapter=new SuibianGaiAdapter(ids,titles,getContext());
-        gListView.setAdapter(gaiAdapter);
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        sbg_rv= (RecyclerView) view.findViewById(R.id.suiyigai_rv);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        sbg_rv.setLayoutManager(linearLayoutManager);
+        sbg_rv.addItemDecoration(new LinearlayoutSpacesItemDecoration(10));
+        gaiAdapter=new SuibianGaiAdapter(getContext(),ids,titles);
+        gaiAdapter.OnItemClickListen(new SuibianGaiAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
+        sbg_rv.setAdapter(gaiAdapter);
     }
 
     //限时抢购控件
-    HorizontalListView hListView;
-    HorizontalListViewAdapter hListViewAdapter;
+    private RecyclerView xsqg_rv;
+    private XianshiQiangAdapter xianshiQiangAdapter;
     //限时抢购
     private void flashSale() {
-        hListView= (HorizontalListView) view.findViewById(R.id.horizon_listview);
-        String[] titles={"怀师", "南怀瑾军校", "闭关", "南怀瑾"};
-        final int[] ids = {R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
-        hListViewAdapter=new HorizontalListViewAdapter(ids,titles,getContext());
-        hListView.setAdapter(hListViewAdapter);
+        String[] titles={"13.14", "15.26", "14.23", "55.55"};
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        xsqg_rv= (RecyclerView) view.findViewById(R.id.xsqg_rv);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        xsqg_rv.setLayoutManager(linearLayoutManager);
+        xsqg_rv.addItemDecoration(new LinearlayoutSpacesItemDecoration(15));
+        xianshiQiangAdapter=new XianshiQiangAdapter(getContext(),ids,titles);
+        xianshiQiangAdapter.OnItemClickLitener(new XianshiQiangAdapter.OnItemClickLitener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+            }
+        });
+        xsqg_rv.setAdapter(xianshiQiangAdapter);
     }
 
     //轮播图控件

@@ -1,7 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="horizontal"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/tttt_xiang_banner"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/tttt_xiang_fanhui"
+                    android:layout_marginStart="10dp"
+                    android:src="@mipmap/fanhui"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp" />
+                <TextView
+                    android:text="@string/taotaotiantang_tit"
+                    android:layout_centerInParent="true"
+                    android:textSize="20sp"
+                    android:textColor="@color/hei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="5dp"
+                android:background="@color/hui"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/tttt_xiang_banner_renqi"
+                    android:text="@string/tttt_xiang_banner_renqi"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tttt_xiang_banner_xinpin"
+                    android:text="@string/tttt_xiang_banner_xinpin"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:id="@+id/tttt_xiang_banner_jiage"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/ttxq_banner_jiage_txt"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:text="@string/tttt_xiang_banner_jiage"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/ttxq_banner_jiage_img"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/tttt_xiang_banner_jiage"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tttt_xiang_banner_xuan"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/ttxq_banner_xuan_txt"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/tttt_xiang_banner_xuan"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/ttxq_banner_xuan_img"
+                        android:src="@mipmap/tttt_xiang_banner_xuan_hui"
+                        android:layout_gravity="center"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/tttt_xiang_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

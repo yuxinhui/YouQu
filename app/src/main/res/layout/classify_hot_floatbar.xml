@@ -3,12 +3,12 @@
     android:layout_alignParentTop="true"
     android:background="@color/hui"
     android:layout_width="match_parent"
-    android:layout_height="45dp">
+    android:layout_height="wrap_content">
 
     <TextView
         android:text="@string/tuijian"
         android:gravity="center_vertical"
         android:layout_marginStart="15dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="45dp" />
 </FrameLayout>

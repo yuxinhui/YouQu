@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context="com.jinfukeji.taqu.MainActivity">
 
         <FrameLayout
@@ -18,8 +17,9 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="45dp">
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:id="@+id/banner_index"
                 android:layout_weight="1"
                 android:orientation="vertical"
@@ -29,8 +29,8 @@
                     android:id="@+id/banner_index_img"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/banner_index_ok"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
                 <TextView
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/hei"
@@ -39,6 +39,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:id="@+id/banner_classify"
                 android:layout_weight="1"
@@ -48,8 +49,8 @@
                     android:id="@+id/banner_classify_img"
                     android:src="@mipmap/banner_classify_wei"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
                 <TextView
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/hei"
@@ -59,6 +60,7 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/banner_shoppingcart"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -67,8 +69,8 @@
                     android:id="@+id/banner_shoppingcart_img"
                     android:src="@mipmap/banner_shoppingcart_wei"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
                 <TextView
                     android:text="@string/banner_shopping"
                     android:layout_gravity="center_horizontal"
@@ -80,14 +82,15 @@
                 android:id="@+id/banner_my"
                 android:orientation="vertical"
                 android:layout_weight="1"
+                android:layout_marginTop="5dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/banner_my_img"
                     android:src="@mipmap/banner_my_wei"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
                 <TextView
                     android:text="@string/banner_my"
                     android:textColor="@color/hei"

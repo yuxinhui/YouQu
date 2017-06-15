@@ -5,8 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="hei">#000000</color>
-    <color name="hui">#F0F0F0</color>
-    <color name="xianshiqiang_tv_bg">#f1a19f9f</color>
+    <color name="hui">#e2e0e0</color>
+    <color name="xianshiqiang_tv_bg">#656464</color>
     <color name="xsq_jishi">#efbb5a</color>
     <color name="biaoti">#F4DD34</color>
+    <color name="renqi_item_jiage">#f12623</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.jinfukeji.taqu.fragment;
+package com.jinfukeji.taqu.fragment.tttt_fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,17 +11,17 @@ import com.jinfukeji.taqu.R;
 
 /**
  * Created by "于志渊"
- * 时间:"17:01"
- * 包名:com.jinfukeji.taqu.fragment
- * 描述:社区分类里的圈子界面
+ * 时间:"14:29"
+ * 包名:com.jinfukeji.taqu.fragment.tttt_fragment
+ * 描述:套套天堂新品界面
  */
 
-public class ClassifyQuanFragment extends Fragment {
+public class XinpinFragment extends Fragment {
     View view;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_classify_quan,container,false);
+        view=inflater.inflate(R.layout.fragment_ttxq_xinpin,container,false);
         return view;
     }
 }

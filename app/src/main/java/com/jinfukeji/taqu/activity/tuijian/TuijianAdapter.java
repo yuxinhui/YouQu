@@ -1,18 +1,16 @@
 package com.jinfukeji.taqu.activity.tuijian;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.media.ThumbnailUtils;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jinfukeji.taqu.R;
-import com.jinfukeji.taqu.utils.BitmapUtil;
+
+import java.util.List;
 
 /**
  * Created by "于志渊"
@@ -21,65 +19,61 @@ import com.jinfukeji.taqu.utils.BitmapUtil;
  * 描述:良心推荐界面适配器
  */
 
-public class TuijianAdapter extends BaseAdapter{
-    private int[] mIconIDs;
+public class TuijianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    public interface OnItemClickLitener{
+        void onItemClick(View view, int position);
+    }
+    private OnItemClickLitener mOnItemClickLitener;
+
+    public void setmOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
+        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
+
+    private LayoutInflater inflater;
+    private List<Integer> mData;
     private String[] mTitles;
-    private Context mContext;
-    private LayoutInflater mInflater;
-    private Bitmap thumBitmap;
 
-    public TuijianAdapter(int[] mIconIDs, String[] mTitles, Context mContext) {
-        this.mIconIDs = mIconIDs;
+    public TuijianAdapter(Context context, List<Integer> mData, String[] mTitles) {
+        this.inflater = LayoutInflater.from(context);
+        this.mData = mData;
         this.mTitles = mTitles;
-        this.mContext = mContext;
-        mInflater= (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public int getCount() {
-        return mIconIDs.length;
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return i;
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        viewHolder holder;
-        if (view == null){
-            holder=new viewHolder();
-            view=mInflater.inflate(R.layout.item_tuijian,null);
-            holder.tuijian_item_img= (ImageView) view.findViewById(R.id.tuijian_item_img);
-            holder.tuijian_item_name_tv= (TextView) view.findViewById(R.id.tuijian_item_name_tv);
-            view.setTag(holder);
-        }else {
-            holder= (viewHolder) view.getTag();
+    private static class TuijianViewHolder extends RecyclerView.ViewHolder{
+        TuijianViewHolder(View itemView) {
+            super(itemView);
         }
-        holder.tuijian_item_name_tv.setText(mTitles[i]);
-        Bitmap iconBitmap = getPropThumnail(mIconIDs[i]);
-        holder.tuijian_item_img.setImageBitmap(iconBitmap);
-        return view;
-    }
-
-    private class viewHolder{
         ImageView tuijian_item_img;
         TextView tuijian_item_name_tv;
     }
 
-    private Bitmap getPropThumnail(int id){
-        Drawable d = mContext.getResources().getDrawable(id);
-        Bitmap b = BitmapUtil.drawableToBitmap(d);
-        //Bitmap bb = BitmapUtil.getRoundedCornerBitmap(b, 100);
-        int w = mContext.getResources().getDimensionPixelOffset(R.dimen.qqfs_width);
-        int h = mContext.getResources().getDimensionPixelSize(R.dimen.qqfs_heigth);
-        thumBitmap = ThumbnailUtils.extractThumbnail(b, w, h);
-        return thumBitmap;
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view=inflater.inflate(R.layout.item_tuijian,parent,false);
+        TuijianViewHolder viewHolder=new TuijianViewHolder(view);
+        viewHolder.tuijian_item_img= (ImageView) view.findViewById(R.id.tuijian_item_img);
+        viewHolder.tuijian_item_name_tv= (TextView) view.findViewById(R.id.tuijian_item_name_tv);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+        if (mOnItemClickLitener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickLitener.onItemClick(holder.itemView,position);
+                }
+            });
+        }
+        if (holder instanceof TuijianViewHolder){
+            ((TuijianViewHolder) holder).tuijian_item_img.setImageResource(mData.get(position));
+            ((TuijianViewHolder) holder).tuijian_item_name_tv.setText(mTitles[position]);
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return mData.size();
     }
 }

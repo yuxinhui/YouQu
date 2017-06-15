@@ -21,7 +21,7 @@
         <activity android:name=".BufferActivity"/>
         <activity android:name=".guide.GuideActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".activity.taotaotiantang.TaoTaoTianTangActivity"/>
+        <activity android:name=".activity.taotaotiantang.TaoTaoTianTangActivity" android:theme="@style/notitleBar"/>
     </application>
 
 </manifest>

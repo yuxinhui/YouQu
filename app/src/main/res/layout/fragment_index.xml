@@ -278,25 +278,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp" />
                 </RelativeLayout>
-                <com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView
-                    android:id="@+id/horizon_listview"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/xsqg_rv"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="wrap_content">
 
-                </com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView>
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
             <!--热门-->
             <LinearLayout
                 android:background="@color/hui"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/suiyigai_hlistview"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/suiyigai_rv"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp">
+                    android:layout_height="wrap_content">
 
-                </com.jinfukeji.taqu.activity.xianshiqiang.HorizontalListView>
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
             <!--套套天堂-->
             <LinearLayout
@@ -351,19 +350,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="30dp"/>
                 </RelativeLayout>
-                <GridView
-                    android:id="@+id/tttt_gv"
-                    android:gravity="center"
-                    android:background="@color/hui"
-                    android:columnWidth="150dp"
-                    android:verticalSpacing="5dp"
-                    android:horizontalSpacing="5dp"
-                    android:stretchMode="columnWidth"
-                    android:numColumns="3"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/tttt_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                </GridView>
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
             <!--情趣服饰-->
             <LinearLayout
@@ -418,19 +410,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="30dp"/>
                 </RelativeLayout>
-                <GridView
-                    android:id="@+id/qqfs_gv"
-                    android:gravity="center"
-                    android:background="@color/hui"
-                    android:columnWidth="200dp"
-                    android:verticalSpacing="5dp"
-                    android:horizontalSpacing="5dp"
-                    android:stretchMode="columnWidth"
-                    android:numColumns="2"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/qqfs_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                </GridView>
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
             <!--热门推荐-->
             <LinearLayout
@@ -445,15 +430,12 @@
                     android:textSize="23sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-                <GridView
-                    android:id="@+id/tuijian_gv"
-                    android:numColumns="2"
-                    android:columnWidth="200dp"
-                    android:horizontalSpacing="5dp"
-                    android:verticalSpacing="5dp"
-                    android:gravity="center"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/tuijian_rv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
         </LinearLayout>
     </com.jinfukeji.taqu.utils.ScrollViewUtil>
@@ -464,7 +446,9 @@
             android:id="@+id/nac_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/biaoti"/>
+            android:background="@color/biaoti">
+
+        </View>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

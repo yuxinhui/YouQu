@@ -1,18 +1,16 @@
 package com.jinfukeji.taqu.activity.qingqufushi;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.media.ThumbnailUtils;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jinfukeji.taqu.R;
-import com.jinfukeji.taqu.utils.BitmapUtil;
+
+import java.util.List;
 
 /**
  * Created by "于志渊"
@@ -21,65 +19,60 @@ import com.jinfukeji.taqu.utils.BitmapUtil;
  * 描述:情趣服饰适配器
  */
 
-public class QingquFushiAdapter extends BaseAdapter {
-    private int[] mIconIDs;
+public class QingquFushiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+
+    public interface OnItemClickLitener{
+        void onItemClick(View view, int position);
+    }
+    private OnItemClickLitener mOnItemClickLitener;
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener){
+        this.mOnItemClickLitener=mOnItemClickLitener;
+    }
+
+    private LayoutInflater inflater;
+    private List<Integer> mData;
     private String[] mTitles;
-    private Context mContext;
-    private LayoutInflater mInflater;
-    private Bitmap thumBitmap;
 
-    public QingquFushiAdapter(int[] mIconIDs, String[] mTitles, Context mContext) {
-        this.mIconIDs = mIconIDs;
+    public QingquFushiAdapter(Context context, List<Integer> mData, String[] mTitles) {
+        this.inflater = LayoutInflater.from(context);
+        this.mData = mData;
         this.mTitles = mTitles;
-        this.mContext = mContext;
-        mInflater= (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public int getCount() {
-        return mIconIDs.length;
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return i;
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        viewHolder holder;
-        if(view==null){
-            holder = new viewHolder();
-            view = mInflater.inflate(R.layout.item_qqfs, null);
-            holder.qqfs_item_img=(ImageView)view.findViewById(R.id.qqfs_item_img);
-            holder.qqfs_item_name_tv=(TextView)view.findViewById(R.id.qqfs_item_name_tv);
-            view.setTag(holder);
-        }else{
-            holder=(viewHolder) view.getTag();
-        }
-        holder.qqfs_item_name_tv.setText(mTitles[i]);
-        Bitmap iconBitmap = getPropThumnail(mIconIDs[i]);
-        holder.qqfs_item_img.setImageBitmap(iconBitmap);
-        return view;
-    }
-
-    private class viewHolder{
-        ImageView qqfs_item_img;
+    private static class QQFSViewHolder extends RecyclerView.ViewHolder{
         TextView qqfs_item_name_tv;
+        ImageView qqfs_item_img;
+        QQFSViewHolder(View itemView){
+            super(itemView);
+        }
+    }
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view=inflater.inflate(R.layout.item_qqfs,parent,false);
+        QQFSViewHolder viewHolder=new QQFSViewHolder(view);
+        viewHolder.qqfs_item_name_tv= (TextView) view.findViewById(R.id.qqfs_item_name_tv);
+        viewHolder.qqfs_item_img= (ImageView) view.findViewById(R.id.qqfs_item_img);
+        return viewHolder;
     }
 
-    private Bitmap getPropThumnail(int id){
-        Drawable d = mContext.getResources().getDrawable(id);
-        Bitmap b = BitmapUtil.drawableToBitmap(d);
-        //Bitmap bb = BitmapUtil.getRoundedCornerBitmap(b, 100);
-        int w = mContext.getResources().getDimensionPixelOffset(R.dimen.qqfs_width);
-        int h = mContext.getResources().getDimensionPixelSize(R.dimen.qqfs_heigth);
-        thumBitmap = ThumbnailUtils.extractThumbnail(b, w, h);
-        return thumBitmap;
+    @Override
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+        if (holder instanceof QQFSViewHolder){
+            ((QQFSViewHolder) holder).qqfs_item_name_tv.setText(mTitles[position]);
+            ((QQFSViewHolder) holder).qqfs_item_img.setImageResource(mData.get(position));
+        }
+        if (mOnItemClickLitener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickLitener.onItemClick(holder.itemView,position);
+                }
+            });
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return mData.size();
     }
 }

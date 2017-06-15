@@ -57,4 +57,12 @@
     <string name="quan_wen_num">今日：13</string>
     <string name="quanzi_renshu">圈子人数：1313</string>
     <string name="quan_tuijian_guanzhu">关注</string>
+    <string name="item_classifyhot_end">加载更多</string>
+    <string name="tttt_xiang_banner_renqi">人气</string>
+    <string name="tttt_xiang_banner_xinpin">新品</string>
+    <string name="tttt_xiang_banner_jiage">价格</string>
+    <string name="tttt_xiang_banner_xuan">筛选</string>
+    <string name="renqi_item_title">我就是在测试昌平U型啊你南方比脑残剧烦人呢你才UI吃死你年出生呢测试</string>
+    <string name="renqi_item_num">2625</string>
+    <string name="renqi_item_xiaoliang">销量:</string>
 </resources>
