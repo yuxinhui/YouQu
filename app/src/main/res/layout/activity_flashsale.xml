@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/xsqxiangqin_fanhui"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/xsqxq_fanhui"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/xsqxiangqin_fanhui"
+            android:textColor="@color/hei"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:id="@+id/xsqxiangqin_time_rl"
+            android:layout_weight="1"
+            android:background="@color/biaoti"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@mipmap/xsqxq_naozhong"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:id="@+id/xsqxq_time_tv"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/renqi_item_jiage"
+                    android:text="@string/xsqxq_time_tv"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/xsqxiangqin_changci_rl"
+            android:layout_weight="1"
+            android:background="@color/hei"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/xsqxq_changci"
+                    android:text="@string/xsqxq_changci_tv"
+                    android:textColor="@color/hui"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/xsqxq_changci_tv"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/hui"
+                    android:text="@string/xsq_jishi_tv"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/xsqxq_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+</LinearLayout>

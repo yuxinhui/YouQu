@@ -1,6 +1,7 @@
 package com.jinfukeji.taqu.activity.xianshiqiang;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +46,7 @@ public class XianshiQiangAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private static class XianshiViewHolder extends RecyclerView.ViewHolder{
         ImageView xsq_img;
-        TextView xsq_jiage_new;
+        TextView xsq_jiage_new,xsq_jiage_old;
         XianshiViewHolder(View itemView) {
             super(itemView);
         }
@@ -57,6 +58,7 @@ public class XianshiQiangAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         XianshiViewHolder viewHolder=new XianshiViewHolder(view);
         viewHolder.xsq_img= (ImageView) view.findViewById(R.id.xsq_img);
         viewHolder.xsq_jiage_new= (TextView) view.findViewById(R.id.xsq_jiage_new);
+        viewHolder.xsq_jiage_old= (TextView) view.findViewById(R.id.xsq_jiage_old);
         return viewHolder;
     }
 
@@ -65,15 +67,16 @@ public class XianshiQiangAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         if (holder instanceof XianshiViewHolder){
             ((XianshiViewHolder) holder).xsq_img.setImageResource(mData.get(position));
             ((XianshiViewHolder) holder).xsq_jiage_new.setText(mTitles[position]);
-            //如果设置了回调，则设置点击事件
-            if (mOnItemClickLitener != null){
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mOnItemClickLitener.onItemClick(holder.itemView,position);
-                    }
-                });
-            }
+            ((XianshiViewHolder) holder).xsq_jiage_old.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+        //如果设置了回调，则设置点击事件
+        if (mOnItemClickLitener != null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickLitener.onItemClick(holder.itemView,position);
+                }
+            });
         }
     }
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/xsqxq_time_img"
+        android:src="@mipmap/buffer2"
+        android:layout_width="130dp"
+        android:layout_height="130dp" />
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+        <TextView
+            android:id="@+id/xsqxq_time_title"
+            android:textSize="16sp"
+            android:textColor="@color/hei"
+            android:text="@string/renqi_item_title"
+            android:maxLines="2"
+            android:layout_marginRight="10dp"
+            android:scrollbars="none"
+            android:singleLine="false"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/xsqxq_time_dazhe"
+            android:text="@string/xsqxq_time_dazhe_tv"
+            android:gravity="center"
+            android:textColor="@color/biaoti"
+            android:background="@color/hei"
+            android:layout_width="70dp"
+            android:layout_height="30dp" />
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/xsqxq_jiage_old"
+                android:text="@string/xsq_jiage_old"
+                android:textColor="@color/xianshiqiang_tv_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/xsqxq_jiage_new"
+                android:textSize="16sp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/xsqxq_jiage_old"
+                android:text="@string/xsq_jiage_new"
+                android:textColor="@color/renqi_item_jiage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/xsqxq_time_liji"
+                android:text="@string/xsqxq_time_liji"
+                android:gravity="center"
+                android:textColor="@color/hei"
+                android:background="@color/biaoti"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="90dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.jinfukeji.taqu.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,9 @@ import java.util.List;
  */
 
 public class TtxqRenqiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    private static final int ITEM_HEAD=0;
+    private static final int ITEM_ITEM=1;
+
     public interface OnItemClickLitener{
         void OnItemClick(View view, int position);
     }
@@ -45,19 +49,23 @@ public class TtxqRenqiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
+        if (viewType == ITEM_HEAD){
+            View view=inflater.inflate(R.layout.item_ttxq_renqi_head,parent,false);
+            return new HeadViewHolder(view);
+        }else if (viewType == ITEM_ITEM){
             View view=inflater.inflate(R.layout.item_renqi,parent,false);
             return new ContentViewHolder(view);
-
+        }
+        return null;
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof ContentViewHolder){
-            ((ContentViewHolder) holder).renqi_item_img.setImageResource(mListData.get(position));
-            ((ContentViewHolder) holder).renqi_item_title.setText(mTitle[position]);
-            ((ContentViewHolder) holder).renqi_item_jiage.setText(mJiage[position]);
-            ((ContentViewHolder) holder).renqi_item_num.setText(mNum[position]);
+            ((ContentViewHolder) holder).renqi_item_img.setImageResource(mListData.get(position-1));
+            ((ContentViewHolder) holder).renqi_item_title.setText(mTitle[position-1]);
+            ((ContentViewHolder) holder).renqi_item_jiage.setText(mJiage[position-1]);
+            ((ContentViewHolder) holder).renqi_item_num.setText(mNum[position-1]);
         }
 
         if (mOnItemClickLitener != null){
@@ -72,7 +80,40 @@ public class TtxqRenqiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        return mListData.size();
+        return mListData.size()+1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position == 0){
+            return ITEM_HEAD;
+        }else {
+            return ITEM_ITEM;
+        }
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(final RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+
+        RecyclerView.LayoutManager manager=recyclerView.getLayoutManager();
+        if (manager instanceof GridLayoutManager){
+            GridLayoutManager gridLayoutManager= (GridLayoutManager) manager;
+            gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    int type=getItemViewType(position);
+                    switch (type){
+                        case ITEM_HEAD:
+                            return 2;
+                        case ITEM_ITEM:
+                            return 1;
+                        default:
+                            return 1;
+                    }
+                }
+            });
+        }
     }
 
     private static class ContentViewHolder extends RecyclerView.ViewHolder{
@@ -84,6 +125,12 @@ public class TtxqRenqiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             renqi_item_title= (TextView) itemView.findViewById(R.id.renqi_item_title);
             renqi_item_jiage= (TextView) itemView.findViewById(R.id.renqi_item_jiage);
             renqi_item_num= (TextView) itemView.findViewById(R.id.renqi_item_num);
+        }
+    }
+
+    private static class HeadViewHolder extends RecyclerView.ViewHolder{
+        HeadViewHolder(View itemView) {
+            super(itemView);
         }
     }
 }

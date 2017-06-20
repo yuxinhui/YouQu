@@ -65,4 +65,13 @@
     <string name="renqi_item_title">我就是在测试昌平U型啊你南方比脑残剧烦人呢你才UI吃死你年出生呢测试</string>
     <string name="renqi_item_num">2625</string>
     <string name="renqi_item_xiaoliang">销量:</string>
+    <string name="pop_shaixuan_fenlei">分类</string>
+    <string name="ttxq_shaixuan_pinpai">品牌</string>
+    <string name="shaixuan_quxiao_btn">取消</string>
+    <string name="shaixuan_ok_btn">确定</string>
+    <string name="xsqxiangqin_fanhui">限时秒杀</string>
+    <string name="xsqxq_time_tv">01:00:00</string>
+    <string name="xsqxq_changci_tv">下一场:</string>
+    <string name="xsqxq_time_dazhe_tv">5折</string>
+    <string name="xsqxq_time_liji">立即抢购</string>
 </resources>

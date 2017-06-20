@@ -23,6 +23,7 @@ import com.jinfukeji.taqu.activity.qingqufushi.QingquFushiAdapter;
 import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTTAdapter;
 import com.jinfukeji.taqu.activity.taotaotiantang.TaoTaoTianTangActivity;
 import com.jinfukeji.taqu.activity.tuijian.TuijianAdapter;
+import com.jinfukeji.taqu.activity.xianshiqiang.FlashSalectivity;
 import com.jinfukeji.taqu.activity.xianshiqiang.XianshiQiangAdapter;
 import com.jinfukeji.taqu.adapter.GuideAdapter;
 import com.jinfukeji.taqu.utils.GridSpacingItemDecoration;
@@ -73,7 +74,10 @@ public class IndexFragment extends Fragment{
         super.onActivityResult(requestCode, resultCode, data);
         switch (resultCode){
             case 11:
-                String s=data.getExtras().getString("index");
+                String ttxq=data.getExtras().getString("index");
+                break;
+            case 22:
+                String xsq_qubu=data.getExtras().getString("index");
                 break;
             default:
                 break;
@@ -159,10 +163,10 @@ public class IndexFragment extends Fragment{
     private TaoTaoTTAdapter taoTTAdapter;
     //套套天堂
     private void taoTTT() {
+        ttttView();//控件初始化
+        ttttClick();//点击事件
         tttt_imgs=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3};
-        tttt_lunbotu_ll= (LinearLayout) view.findViewById(R.id.tttt_lunbotu_ll);
         GuideUtil.initDot(tttt_imgs,getContext(),tttt_lunbotu_ll);
-        tttt_lunbotu_vp= (ViewPager) view.findViewById(R.id.tttt_lunbotu_vp);
         GuideAdapter tttt_guideAdapter=new GuideAdapter(tttt_imgs,getContext());
         tttt_lunbotu_vp.setAdapter(tttt_guideAdapter);
         tttt_lunbotu_vp.setCurrentItem(tttt_imgs.length*10000);
@@ -174,7 +178,6 @@ public class IndexFragment extends Fragment{
         String[] titles={"小二坏坏", "就是一个", "超级好人", "真的","梦雷", "就是一个", "傻逼", "真的"};
         final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4,
                 R.mipmap.buffer5,R.mipmap.buffer6,R.mipmap.buffer7,R.mipmap.buffer8));
-        tttt_rv= (RecyclerView) view.findViewById(R.id.tttt_rv);
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),4,GridLayoutManager.VERTICAL,false);
         tttt_rv.setLayoutManager(layoutManager);
         int spanCount=4;
@@ -189,6 +192,22 @@ public class IndexFragment extends Fragment{
             }
         });
         tttt_rv.setAdapter(taoTTAdapter);
+    }
+
+    private void ttttClick() {
+        tttt_more_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),TaoTaoTianTangActivity.class));
+            }
+        });
+    }
+
+    private void ttttView() {
+        tttt_lunbotu_ll= (LinearLayout) view.findViewById(R.id.tttt_lunbotu_ll);
+        tttt_lunbotu_vp= (ViewPager) view.findViewById(R.id.tttt_lunbotu_vp);
+        tttt_rv= (RecyclerView) view.findViewById(R.id.tttt_rv);
+        tttt_more_txt= (TextView) view.findViewById(R.id.tttt_more_txt);
     }
 
     //中间随便改控件
@@ -214,13 +233,14 @@ public class IndexFragment extends Fragment{
     }
 
     //限时抢购控件
+    private TextView xsq_changci_tv,xsq_time_tv,xsq_qubu_tv;
     private RecyclerView xsqg_rv;
     private XianshiQiangAdapter xianshiQiangAdapter;
     //限时抢购
     private void flashSale() {
+        flashSaleView();//初始化里面控件
         String[] titles={"13.14", "15.26", "14.23", "55.55"};
         final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
-        xsqg_rv= (RecyclerView) view.findViewById(R.id.xsqg_rv);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         xsqg_rv.setLayoutManager(linearLayoutManager);
@@ -233,6 +253,23 @@ public class IndexFragment extends Fragment{
             }
         });
         xsqg_rv.setAdapter(xianshiQiangAdapter);
+        flashSaleClick();//点击事件
+    }
+
+    private void flashSaleClick() {
+        xsq_qubu_tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), FlashSalectivity.class));
+            }
+        });
+    }
+
+    private void flashSaleView() {
+        xsqg_rv= (RecyclerView) view.findViewById(R.id.xsqg_rv);
+        xsq_changci_tv= (TextView) view.findViewById(R.id.xsq_changci_tv);
+        xsq_time_tv= (TextView) view.findViewById(R.id.xsq_time_tv);
+        xsq_qubu_tv= (TextView) view.findViewById(R.id.xsq_qubu_tv);
     }
 
     //轮播图控件

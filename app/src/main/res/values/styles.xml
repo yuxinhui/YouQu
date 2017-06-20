@@ -13,4 +13,9 @@
         <item name="colorPrimaryDark">@color/hui</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="shaixuan_popup" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_out</item>
+    </style>
 </resources>
