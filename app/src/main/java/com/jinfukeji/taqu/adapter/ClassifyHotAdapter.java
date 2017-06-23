@@ -131,7 +131,7 @@ public class ClassifyHotAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         HeadViewHolder(View itemView) {
             super(itemView);
             Context context = itemView.getContext();
-            shequ_imgs=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3};
+            shequ_imgs=new int[]{R.mipmap.index_guide_1,R.mipmap.index_tttt_guide_1,R.mipmap.index_qqfs_guide_1};
             shequ_hot_ll= (LinearLayout) itemView.findViewById(R.id.classify_hot_lunbotu_ll);
             GuideUtil.initDot(shequ_imgs,context,shequ_hot_ll);
             shequ_hot_vp= (ViewPager) itemView.findViewById(R.id.classify_hot_lunbotu_vp);

@@ -36,7 +36,7 @@
             android:layout_height="80dp">
             <ImageView
                 android:id="@+id/quan_wen_img"
-                android:src="@mipmap/buffer"
+                android:src="@mipmap/kenan"
                 android:layout_marginStart="15dp"
                 android:layout_centerVertical="true"
                 android:layout_width="60dp"
@@ -76,7 +76,7 @@
             android:layout_height="80dp">
             <ImageView
                 android:id="@+id/quan_wen_img1"
-                android:src="@mipmap/buffer"
+                android:src="@mipmap/kenan"
                 android:layout_marginStart="15dp"
                 android:layout_centerVertical="true"
                 android:layout_width="60dp"
@@ -116,7 +116,7 @@
             android:layout_height="80dp">
             <ImageView
                 android:id="@+id/quan_wen_img2"
-                android:src="@mipmap/buffer"
+                android:src="@mipmap/kenan"
                 android:layout_marginStart="15dp"
                 android:layout_centerVertical="true"
                 android:layout_width="60dp"

@@ -74,4 +74,16 @@
     <string name="xsqxq_changci_tv">下一场:</string>
     <string name="xsqxq_time_dazhe_tv">5折</string>
     <string name="xsqxq_time_liji">立即抢购</string>
+    <string name="gouwu_quanxuan_tv">全选</string>
+    <string name="gouwu_jiesuan">去结算(1)</string>
+    <string name="gouwu_heji_tv">合计:</string>
+    <string name="gouwu_item_guige">规格:</string>
+    <string name="gouwu_guige_juti">随便啦反正在测试</string>
+    <string name="gouwu_num_jian">-</string>
+    <string name="gouwu_num_jia">+</string>
+    <string name="gouwu_cailike"> 猜你喜欢 </string>
+    <string name="end"> END </string>
+    <string name="pop_shopche_guige">已选择:</string>
+    <string name="pop_shopche_num">数量</string>
+    <string name="pop_shopche_ok_btn">确定</string>
 </resources>

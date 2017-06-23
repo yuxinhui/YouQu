@@ -28,8 +28,8 @@ public class XsqxqTimeFragment extends Fragment{
     View view;
     private RecyclerView xsqxq_time_rv;
     private XsqxqTimeAdapter timeAdapter;
-    List<Integer> integerList=new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4,
-            R.mipmap.buffer5,R.mipmap.buffer6,R.mipmap.buffer7,R.mipmap.buffer8));
+    List<Integer> integerList=new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,
+            R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

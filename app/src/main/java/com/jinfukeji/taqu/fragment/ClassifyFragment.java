@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jinfukeji.taqu.R;
+import com.jinfukeji.taqu.fragment.classifyfragment.ClassifyHotFragment;
+import com.jinfukeji.taqu.fragment.classifyfragment.ClassifyQuanFragment;
 
 import java.util.ArrayList;
 import java.util.List;

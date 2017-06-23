@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/gouwu_item_xuan_img"
+        android:src="@mipmap/gouwu_duihao_ok"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="27dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+    <ImageView
+        android:id="@+id/gouwu_item_shangpin_img"
+        android:src="@mipmap/kenan"
+        android:layout_toRightOf="@id/gouwu_item_xuan_img"
+        android:layout_marginLeft="5dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+    <TextView
+        android:id="@+id/gouwu_item_shangpin_tit"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:ellipsize="end"
+        android:text="@string/renqi_item_title"
+        android:textColor="@color/hei"
+        android:layout_toRightOf="@id/gouwu_item_shangpin_img"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/gouwu_item_shangpin_guige"
+        android:layout_marginTop="5dp"
+        android:text="@string/gouwu_item_guige"
+        android:layout_below="@id/gouwu_item_shangpin_tit"
+        android:layout_alignStart="@id/gouwu_item_shangpin_tit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/gouwu_item_shangpin_guige_juti"
+        android:text="@string/gouwu_guige_juti"
+        android:maxLines="1"
+        android:singleLine="false"
+        android:ellipsize="end"
+        android:layout_toRightOf="@id/gouwu_item_shangpin_guige"
+        android:layout_alignTop="@id/gouwu_item_shangpin_guige"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/gouwu_item_shangpin_jiage"
+        android:text="@string/xsq_jiage_new"
+        android:textColor="@color/hei"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/gouwu_item_shangpin_guige"
+        android:layout_alignStart="@id/gouwu_item_shangpin_guige"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gouwu_item_xuan_img">
+        <Button
+            android:id="@+id/gouwu_num_jian"
+            android:gravity="center"
+            android:text="@string/gouwu_num_jian"
+            android:background="@color/hui"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:text="@string/renqi_item_num"
+            android:id="@+id/gouwu_num"
+            android:textColor="@color/hei"
+            android:layout_width="45dp"
+            android:gravity="center"
+            android:layout_toRightOf="@id/gouwu_num_jian"
+            android:layout_height="20dp" />
+        <Button
+            android:id="@+id/gouwu_num_jia"
+            android:layout_toRightOf="@id/gouwu_num"
+            android:gravity="center"
+            android:text="@string/gouwu_num_jia"
+            android:background="@color/hui"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </RelativeLayout>
+</RelativeLayout>

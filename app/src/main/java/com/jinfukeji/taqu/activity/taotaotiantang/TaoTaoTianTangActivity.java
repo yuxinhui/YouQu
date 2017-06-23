@@ -8,22 +8,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jinfukeji.taqu.R;
-import com.jinfukeji.taqu.adapter.TtxqXuanFenleiAdapter;
 import com.jinfukeji.taqu.fragment.tttt_fragment.RenqiFragment;
 import com.jinfukeji.taqu.fragment.tttt_fragment.XinpinFragment;
-import com.jinfukeji.taqu.utils.GridSpacingItemDecoration;
+import com.jinfukeji.taqu.utils.FlowLayout;
 
 /**
  * Created by "于志渊"
@@ -123,36 +121,66 @@ public class TaoTaoTianTangActivity extends AppCompatActivity implements View.On
     }
 
     //弹窗里面的控件
-    private RecyclerView ttqx_xuan_fenlei,ttxq_xuan_pinpai;
+    private FlowLayout ttxq_xuan_fenlei,ttxq_xuan_pinpai;
     private Button ttxq_xuan_quxiao,ttxq_xuan_ok;
-    private TtxqXuanFenleiAdapter xuanFenleiAdapter;
-    int spanCount=3;
-    int spacing=10;
+    private String[] mPaizi={"坏坏二","哈哈哈","杜蕾斯","杰士邦","西鞥类","爱惜吧"};
+    private String[] mFenlei={"小二坏坏","哈哈花花","冰火二重","随便测试","西东南北","上下左右","掐后例外","傻逼小雷"};
     private void popInIntView() {
-        ttxq_xuan_pinpai= (RecyclerView) shaixuan_view.findViewById(R.id.ttxq_xuan_pinpai);
-        ttqx_xuan_fenlei= (RecyclerView) shaixuan_view.findViewById(R.id.ttqx_xuan_fenlei);
+        ttxq_xuan_pinpai= (FlowLayout) shaixuan_view.findViewById(R.id.ttxq_xuan_pinpai);
+        ttxq_xuan_fenlei= (FlowLayout) shaixuan_view.findViewById(R.id.ttqx_xuan_fenlei);
         ttxq_xuan_quxiao= (Button) shaixuan_view.findViewById(R.id.ttxq_xuan_quxiao);
         ttxq_xuan_ok= (Button) shaixuan_view.findViewById(R.id.ttxq_xuan_ok);
 
-        GridLayoutManager layoutManager=new GridLayoutManager(shaixuan_view.getContext(),3,GridLayoutManager.VERTICAL,false);
-        ttxq_xuan_pinpai.setLayoutManager(layoutManager);
-        ttxq_xuan_pinpai.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing,false));
-        String[] mPaizi={"坏坏","哈哈","杜蕾斯","杰士邦","西鞥类","爱惜吧"};
-        xuanFenleiAdapter=new TtxqXuanFenleiAdapter(mPaizi,shaixuan_view.getContext());
-        xuanFenleiAdapter.setmOnItemClickListener(new TtxqXuanFenleiAdapter.OnItemClickListener() {
-            @Override
-            public void OnItemClick(View view, int position) {
-                view.findViewById(R.id.item_ttxq_xuan_fenlei_tit).setBackgroundResource(R.drawable.item_ttxq_xuan_text_style_zhong);
-            }
-        });
-        ttxq_xuan_pinpai.setAdapter(xuanFenleiAdapter);
+        ttxq_xuan_pinpai.removeAllViews();
+        for (int i=0;i<mPaizi.length;i++){
+            CheckBox paiZiBox= (CheckBox) View.inflate(shaixuan_view.getContext(),R.layout.item_flowlayout,null);
+            paiZiBox.setText(mPaizi[i]);
+            final int finalX=i;
+            paiZiBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    refreshCheckBox(mPaizi[finalX]);
+                }
+            });
+            ttxq_xuan_pinpai.addView(paiZiBox);
+        }
+        ttxq_xuan_fenlei.removeAllViews();
+        for (int a=0;a<mPaizi.length;a++){
+            CheckBox fenLeiBox= (CheckBox) View.inflate(shaixuan_view.getContext(),R.layout.item_flowlayout,null);
+            fenLeiBox.setText(mFenlei[a]);
+            final int finalX=a;
+            fenLeiBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    refreshCheckBox1(mFenlei[finalX]);
+                }
+            });
+            ttxq_xuan_fenlei.addView(fenLeiBox);
+        }
+    }
 
-        String[] mFenlei={"坏坏","哈哈","杜蕾斯","杰士邦","西鞥类","爱惜吧","西巴拉","巴扎黑"};
-        GridLayoutManager layoutManager1=new GridLayoutManager(shaixuan_view.getContext(),3,GridLayoutManager.VERTICAL,false);
-        ttqx_xuan_fenlei.setLayoutManager(layoutManager1);
-        ttqx_xuan_fenlei.addItemDecoration(new GridSpacingItemDecoration(spanCount,spacing,false));
-        xuanFenleiAdapter=new TtxqXuanFenleiAdapter(mFenlei,shaixuan_view.getContext());
-        ttqx_xuan_fenlei.setAdapter(xuanFenleiAdapter);
+    private void refreshCheckBox(String s) {
+        for(int y=0;y<ttxq_xuan_pinpai.getChildCount();y++){
+            CheckBox radio = (CheckBox) ttxq_xuan_pinpai.getChildAt(y);
+
+            if(s.equals(radio.getText())){
+                radio.setChecked(true);
+            }else {
+                radio.setChecked(false);
+            }
+        }
+    }
+
+    private void refreshCheckBox1(String s) {
+        for(int y=0;y<ttxq_xuan_fenlei.getChildCount();y++){
+            CheckBox radio = (CheckBox) ttxq_xuan_fenlei.getChildAt(y);
+
+            if(s.equals(radio.getText())){
+                radio.setChecked(true);
+            }else {
+                radio.setChecked(false);
+            }
+        }
     }
 
     //弹窗里点击事件

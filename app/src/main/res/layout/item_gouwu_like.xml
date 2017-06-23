@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/gouwu_item_like_img"
+        android:src="@mipmap/kenan"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp" />
+    <RelativeLayout
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/gouwu_item_like_tit"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:singleLine="false"
+            android:textColor="@color/hei"
+            android:text="@string/renqi_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/gouwu_item_like_jiage"
+            android:textColor="@color/hei"
+            android:text="@string/xsq_jiage_new"
+            android:textSize="18sp"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/gouwu_item_like_tit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/gouwu_item_like_shopche"
+            android:src="@mipmap/banner_shoppingcart_wei"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/gouwu_item_like_tit"
+            android:layout_marginRight="5dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+    </RelativeLayout>
+</LinearLayout>

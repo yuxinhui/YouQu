@@ -8,11 +8,12 @@
         android:id="@+id/tttt_item_name_tv"
         android:text="@string/tttt_item_txt"
         android:textColor="@color/hei"
-        android:layout_width="150dp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/tttt_item_img"
         android:src="@mipmap/ic_launcher"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="150dp" />
 </LinearLayout>

@@ -44,7 +44,7 @@ public class TuijianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
         }
         ImageView tuijian_item_img;
-        TextView tuijian_item_name_tv;
+        TextView tuijian_item_tit_tv,tuijian_item_content;
     }
 
     @Override
@@ -52,7 +52,11 @@ public class TuijianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         View view=inflater.inflate(R.layout.item_tuijian,parent,false);
         TuijianViewHolder viewHolder=new TuijianViewHolder(view);
         viewHolder.tuijian_item_img= (ImageView) view.findViewById(R.id.tuijian_item_img);
-        viewHolder.tuijian_item_name_tv= (TextView) view.findViewById(R.id.tuijian_item_name_tv);
+        viewHolder.tuijian_item_tit_tv= (TextView) view.findViewById(R.id.tuijian_item_tit_tv);
+        viewHolder.tuijian_item_content= (TextView) view.findViewById(R.id.tuijian_item_content);
+        ViewGroup.LayoutParams params=viewHolder.tuijian_item_img.getLayoutParams();
+        params.height= (int) (200+Math.random()*400);
+        viewHolder.tuijian_item_img.setLayoutParams(params);
         return viewHolder;
     }
 
@@ -68,12 +72,12 @@ public class TuijianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
         if (holder instanceof TuijianViewHolder){
             ((TuijianViewHolder) holder).tuijian_item_img.setImageResource(mData.get(position));
-            ((TuijianViewHolder) holder).tuijian_item_name_tv.setText(mTitles[position]);
+            ((TuijianViewHolder) holder).tuijian_item_tit_tv.setText(mTitles[position]);
         }
     }
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mData == null ? 0 : mData.size();
     }
 }

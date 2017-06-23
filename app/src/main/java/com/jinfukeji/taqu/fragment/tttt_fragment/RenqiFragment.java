@@ -39,8 +39,8 @@ public class RenqiFragment extends Fragment{
 
     //控件初始化
     private void initView() {
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4,
-                R.mipmap.buffer5,R.mipmap.buffer6,R.mipmap.buffer7,R.mipmap.buffer8));
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,
+                R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
         String[] mTitle={"【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞","【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞",
                 "【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞","【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞",
                 "【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞","【我也不知道说的啥】我就是水边打折玩的不要介意哈咋嫩也就是四边搞搞",

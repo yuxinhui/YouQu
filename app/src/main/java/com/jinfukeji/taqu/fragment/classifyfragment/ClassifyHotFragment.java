@@ -1,4 +1,4 @@
-package com.jinfukeji.taqu.fragment;
+package com.jinfukeji.taqu.fragment.classifyfragment;
 
 import android.content.Context;
 import android.graphics.Color;

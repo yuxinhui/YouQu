@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="3"
-        android:textColor="@color/hei"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/gouwu_biaoti"
+        android:background="@color/biaoti"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/gouwu_xiaoxi"
+            android:src="@mipmap/index_buffer_xinxi_img"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:text="@string/banner_shopping"
+            android:textColorHint="@color/hei"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/gouwu_biaoti"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/gouwu_liebiao"
+                android:background="@color/hui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp">
+                <View
+                    android:background="@color/hui"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/gouwu_cailike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:background="@color/hui"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/gouwu_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"/>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <ImageView
+            android:id="@+id/gouwu_quanxuan_img"
+            android:src="@mipmap/gouwu_duihao_ok"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:text="@string/gouwu_quanxuan_tv"
+            android:layout_toRightOf="@id/gouwu_quanxuan_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/gouwu_jiesuan_btn"
+            android:text="@string/gouwu_jiesuan"
+            android:gravity="center"
+            android:textColor="@color/hei"
+            android:layout_alignParentRight="true"
+            android:background="@color/biaoti"
+            android:layout_width="130dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/gouwu_zongjia_tv"
+            android:layout_toLeftOf="@id/gouwu_jiesuan_btn"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textSize="16sp"
+            android:text="@string/xsq_jiage_new"
+            android:textColor="@color/hei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/gouwu_heji_tv"
+            android:textColor="@color/hei"
+            android:layout_toLeftOf="@id/gouwu_zongjia_tv"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/popshopche_ll"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_marginTop="14dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/pop_shopche_img"
+                android:src="@mipmap/kenan"
+                android:layout_marginTop="-13dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/pop_shopche_jiage"
+                    android:text="@string/xsq_jiage_new"
+                    android:textColor="@color/hei"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/pop_shopche_guige"
+                    android:text="@string/pop_shopche_guige"
+                    android:layout_below="@id/pop_shopche_jiage"
+                    android:layout_alignStart="@id/pop_shopche_jiage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/pop_shopche_guige_juti"
+                    android:text="@string/gouwu_guige_juti"
+                    android:maxLines="1"
+                    android:singleLine="false"
+                    android:ellipsize="end"
+                    android:layout_toRightOf="@id/pop_shopche_guige"
+                    android:layout_alignTop="@id/pop_shopche_guige"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:text="@string/gouwu_item_guige"
+                android:textColor="@color/hei"
+                android:textSize="16sp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <com.jinfukeji.taqu.utils.FlowLayout
+                android:id="@+id/pop_shopche_danxuan_fl"
+                app:vertical_spacing="8dp"
+                app:horizontal_spacing="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.jinfukeji.taqu.utils.FlowLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/hei"
+                    android:textSize="16sp"
+                    android:text="@string/pop_shopche_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RelativeLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/pop_gouwu_num_jian"
+                        android:gravity="center"
+                        android:text="@string/gouwu_num_jian"
+                        android:background="@color/hui"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:text="@string/renqi_item_num"
+                        android:id="@+id/pop_gouwu_num"
+                        android:textColor="@color/hei"
+                        android:layout_width="45dp"
+                        android:gravity="center"
+                        android:layout_toRightOf="@id/pop_gouwu_num_jian"
+                        android:layout_height="20dp" />
+                    <Button
+                        android:id="@+id/pop_gouwu_num_jia"
+                        android:layout_toRightOf="@id/pop_gouwu_num"
+                        android:gravity="center"
+                        android:text="@string/gouwu_num_jia"
+                        android:background="@color/hui"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_below="@id/popshopche_ll"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <Button
+        android:id="@+id/pop_shopche_ok_btn"
+        android:layout_alignParentBottom="true"
+        android:text="@string/pop_shopche_ok_btn"
+        android:background="@color/biaoti"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</RelativeLayout>

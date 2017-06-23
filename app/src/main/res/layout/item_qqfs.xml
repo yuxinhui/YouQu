@@ -16,6 +16,6 @@
         android:id="@+id/qqfs_item_img"
         android:layout_toRightOf="@id/qqfs_item_name_tv"
         android:src="@mipmap/ic_launcher"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="200dp" />
 </RelativeLayout>

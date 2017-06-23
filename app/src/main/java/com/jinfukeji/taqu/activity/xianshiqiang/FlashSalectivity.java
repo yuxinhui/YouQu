@@ -108,7 +108,8 @@ public class FlashSalectivity extends AppCompatActivity implements View.OnClickL
     private void hideFragments(FragmentTransaction transaction) {
         if (timeFragment != null){
             transaction.hide(timeFragment);
-        }else if (changciFragment != null){
+        }
+        if (changciFragment != null){
             transaction.hide(changciFragment);
         }
     }

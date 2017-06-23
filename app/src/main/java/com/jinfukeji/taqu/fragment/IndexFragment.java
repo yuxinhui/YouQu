@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,14 +90,12 @@ public class IndexFragment extends Fragment{
     TuijianAdapter tuijianAdapter;
     private void tuiJian() {
         tuijian_rv= (RecyclerView) view.findViewById(R.id.tuijian_rv);
-        String[] titles={"小二坏坏", "好人","才认识","你个loser"};
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer3,R.mipmap.buffer4,R.mipmap.buffer5,R.mipmap.buffer));
-        GridLayoutManager layoutManager=new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
+        String[] titles={"小二坏坏", "好人","才认识","你个loser","测试玩呢","呜呜呜呜呜呜","不回话那单"};
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,
+                R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
+        StaggeredGridLayoutManager layoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         tuijian_rv.setLayoutManager(layoutManager);
-        int spanCont=2;
-        int space=15;
-        boolean includeEdge = false;
-        tuijian_rv.addItemDecoration(new GridSpacingItemDecoration(spanCont,space,includeEdge));
+        tuijian_rv.addItemDecoration(new GridSpacingItemDecoration(2,10,false));
         tuijianAdapter=new TuijianAdapter(getContext(),ids,titles);
         tuijian_rv.setAdapter(tuijianAdapter);
     }
@@ -117,7 +116,8 @@ public class IndexFragment extends Fragment{
     private QingquFushiAdapter fushiAdapter;
     //情趣服饰
     private void qingQuFushi() {
-        qqfs_imgs=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
+        qqfs_imgs=new int[]{R.mipmap.index_guide_1,R.mipmap.index_tttt_guide_1,
+                R.mipmap.index_qqfs_guide_1,R.mipmap.index_guide_1};
         qqfs_lunbotu_ll= (LinearLayout) view.findViewById(R.id.qqfs_lunbotu_ll);
         GuideUtil.initDot(qqfs_imgs,getContext(),qqfs_lunbotu_ll);
         qqfs_lunbotu_vp= (ViewPager) view.findViewById(R.id.qqfs_lunbotu_vp);
@@ -129,9 +129,15 @@ public class IndexFragment extends Fragment{
         GuideUtil.setOnTouchListener(qqfs_lunbotu_vp,qqfsHandler);
         GuideUtil.setOnPageChangeListener(qqfs_lunbotu_vp,qqfs_imgs,qqfs_lunbotu_ll);
         String[] titles={"超级好人", "就是一个", "小二坏坏", "真的"};
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
         qqfs_rv= (RecyclerView) view.findViewById(R.id.qqfs_rv);
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return 1;
+            }
+        });
         qqfs_rv.setLayoutManager(layoutManager);
         int spanCount=2;
         int spacing=10;
@@ -165,7 +171,8 @@ public class IndexFragment extends Fragment{
     private void taoTTT() {
         ttttView();//控件初始化
         ttttClick();//点击事件
-        tttt_imgs=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3};
+        tttt_imgs=new int[]{R.mipmap.index_guide_1,R.mipmap.index_tttt_guide_1,
+                R.mipmap.index_qqfs_guide_1,R.mipmap.index_guide_1};
         GuideUtil.initDot(tttt_imgs,getContext(),tttt_lunbotu_ll);
         GuideAdapter tttt_guideAdapter=new GuideAdapter(tttt_imgs,getContext());
         tttt_lunbotu_vp.setAdapter(tttt_guideAdapter);
@@ -176,9 +183,15 @@ public class IndexFragment extends Fragment{
         GuideUtil.setOnPageChangeListener(tttt_lunbotu_vp,tttt_imgs,tttt_lunbotu_ll);
 
         String[] titles={"小二坏坏", "就是一个", "超级好人", "真的","梦雷", "就是一个", "傻逼", "真的"};
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4,
-                R.mipmap.buffer5,R.mipmap.buffer6,R.mipmap.buffer7,R.mipmap.buffer8));
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,
+                R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),4,GridLayoutManager.VERTICAL,false);
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return 1;
+            }
+        });
         tttt_rv.setLayoutManager(layoutManager);
         int spanCount=4;
         int spacing=10;
@@ -216,7 +229,7 @@ public class IndexFragment extends Fragment{
     //中间随便改
     private void suiYiGai() {
         String[] titles={"梦雷", "就是一个", "傻逼", "真的"};
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
         sbg_rv= (RecyclerView) view.findViewById(R.id.suiyigai_rv);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -240,7 +253,7 @@ public class IndexFragment extends Fragment{
     private void flashSale() {
         flashSaleView();//初始化里面控件
         String[] titles={"13.14", "15.26", "14.23", "55.55"};
-        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4));
+        final List<Integer> ids =new ArrayList<Integer>(Arrays.asList(R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan,R.mipmap.kenan));
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         xsqg_rv.setLayoutManager(linearLayoutManager);
@@ -286,7 +299,8 @@ public class IndexFragment extends Fragment{
     private ImageView index_sousuo_img,index_xinxi_img;
     //轮播图
     public void initBanner() {
-        imgsId=new int[]{R.mipmap.buffer,R.mipmap.buffer2,R.mipmap.buffer3,R.mipmap.buffer4};
+        imgsId=new int[]{R.mipmap.index_guide_1,R.mipmap.index_tttt_guide_1,
+                R.mipmap.index_qqfs_guide_1,R.mipmap.index_guide_1};
         lunbotu_dots_ll= (LinearLayout) view.findViewById(R.id.lunbotu_ll);
         GuideUtil.initDot(imgsId,getContext(),lunbotu_dots_ll);
         lunbotu_guide_vp= (ViewPager) view.findViewById(R.id.lunbotu_vp);

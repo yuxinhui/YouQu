@@ -1,4 +1,4 @@
-package com.jinfukeji.taqu.fragment;
+package com.jinfukeji.taqu.fragment.classifyfragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
