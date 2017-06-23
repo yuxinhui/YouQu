@@ -15,16 +15,6 @@
             android:layout_marginStart="20dp"
             android:layout_width="25dp"
             android:layout_height="25dp" />
-        <TextView
-            android:text="@string/wode"
-            android:textColorHint="@color/hei"
-            android:textSize="23sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </RelativeLayout>
     <ScrollView
         android:scrollbars="horizontal"
@@ -35,12 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RelativeLayout
-                android:background="@color/biaoti"
                 android:layout_width="match_parent"
                 android:layout_height="100dp">
                 <ImageView
-                    android:id="@+id/my_touxiang_img"
                     android:layout_centerVertical="true"
+                    android:id="@+id/my_touxiang_img"
                     android:layout_marginStart="15dp"
                     android:background="@drawable/my_touxiang_img"
                     android:layout_width="80dp"
@@ -53,6 +42,7 @@
                     android:layout_toRightOf="@id/my_touxiang_img"
                     android:layout_marginLeft="13dp"
                     android:layout_marginTop="25dp"
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -61,8 +51,29 @@
                     android:layout_marginTop="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_below="@+id/my_name_txt"
                     android:layout_alignStart="@+id/my_name_txt" />
+                <Button
+                    android:id="@+id/my_denglu_btn"
+                    android:text="@string/my_denglu_btn"
+                    android:layout_toRightOf="@id/my_touxiang_img"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/my_denglu_btn"
+                    android:textColor="@color/hei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <Button
+                    android:id="@+id/my_zhuce_btn"
+                    android:textColor="@color/hei"
+                    android:text="@string/my_zhuce_btn"
+                    android:layout_toRightOf="@id/my_denglu_btn"
+                    android:layout_alignTop="@id/my_denglu_btn"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/my_zhuce_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
                 <TextView
                     android:id="@+id/my_zuji"
                     android:text="@string/my_zuji"
@@ -72,7 +83,7 @@
                     android:layout_marginBottom="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-                <RelativeLayout
+                <View
                     android:background="#353535"
                     android:layout_toLeftOf="@id/my_zuji"
                     android:layout_width="1dp"
@@ -90,6 +101,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
+            <View
+                android:background="@color/hui"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"

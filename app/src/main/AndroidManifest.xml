@@ -23,6 +23,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".activity.taotaotiantang.TaoTaoTianTangActivity" android:theme="@style/notitleBar"/>
         <activity android:name=".activity.xianshiqiang.FlashSalectivity" android:theme="@style/notitleBar"/>
+        <activity android:name=".activity.dengluandzhuce.DengluActivity"/>
     </application>
 
 </manifest>

@@ -86,4 +86,6 @@
     <string name="pop_shopche_guige">已选择:</string>
     <string name="pop_shopche_num">数量</string>
     <string name="pop_shopche_ok_btn">确定</string>
+    <string name="my_denglu_btn">登录</string>
+    <string name="my_zhuce_btn">注册</string>
 </resources>
